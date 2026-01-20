@@ -1,2 +1,2 @@
 # EletroPoint
-Project for an online store selling electronic products.
+Project for an online store of electronic products.
