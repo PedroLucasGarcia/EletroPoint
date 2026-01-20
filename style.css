@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+/*GERAL*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "League Spartan", 'Poppins', Arial, sans-serif;
+}
+ul {
+    list-style: none;
+}
+a, a:hover {
+    text-decoration: none;
+}
+
+/*HEADER*/
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    color: #2e2e2e;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1000;
+    /*border: 1px solid red;*/
+}
+header a {
+    color: #2e2e2e;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+header a:hover {
+    color: #000;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 200px;
+    height: 10vh;
+}
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.logo img{
+    width: 90px;
+}
+.search-box {
+    position: relative;
+}
+.search-box input {
+    width: 500px;
+    padding: 20px; /* espaço para o botão */
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+}
+.search-box input:focus {
+    outline: none;
+
+}
+.search-box .search-btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.search-btn i {
+    font-size: 1.2rem;
+    color: #2e2e2e;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li a{
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+.icons {
+    display: flex;
+    gap: 2rem;
+}
+i {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #2e2e2e;
+}
