@@ -1,0 +1,142 @@
+/*GENERAL STYLES*/
+section{
+    height: 75vh;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+.section-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 0 4rem;
+}
+.containers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0rem;
+}
+
+/*APPLE AND XIAOMI*/
+.smartphones-apple, .smartphones-xiaomi {
+    margin-top: 7rem;
+    font-family: "League Spartan", 'Poppins', 'Segoe UI', sans-serif;
+    width: 100%;
+    background-color: #f5f5f5;
+    color: #333;
+    position: relative;
+}
+.title {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: -3px;
+    color: #2e2e2e;
+}
+.img{
+    width: 230px;
+    height: 270px;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+.sub-title{
+    color: #000;
+    font-weight: 500;
+    letter-spacing: -1px;
+    text-align: center;
+    font-size: 2rem;
+    margin: 1rem 0rem;
+}
+.description, .description2 {
+    font-family:  'Segoe UI', Arial, sans-serif;
+    font-size: 1rem;
+    text-align: center; 
+    font-weight: 400;
+}
+.description2 {
+    margin: 0rem 1rem 1rem 1rem; 
+}
+.price {
+    font-family:  'Segoe UI', Arial, sans-serif;
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 1rem; 
+    font-weight: 600;
+}
+button{
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 0.8rem;
+}
+.button {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.btn-1{
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #06c;
+    color: #fff;
+}
+.btn-1:hover{
+    background-color: #005bb5;
+}
+.btn-2{
+    border: none;
+    text-decoration: underline;
+    text-underline-offset: .4rem;
+    color: #06c;
+    background-color: transparent;
+}
+.btn-2:hover{
+    color: #005bb5;
+}
+
+/*SAMSUNG AND GOOGLE*/
+.smartphones-samsung, .smartphones-google {
+    margin-top: 0rem;
+    font-family: "League Spartan", 'Poppins', 'Segoe UI', sans-serif;
+    width: 100%;
+    background-color: #fff;
+    color: #333;
+    position: relative;
+}
+.smartphones-samsung .btn-1, .smartphones-xiaomi .btn-1{
+    background-color: #000;
+    color: #fff;
+}
+.smartphones-samsung .btn-1:hover, .smartphones-xiaomi .btn-1:hover{
+    background-color: #333;
+}
+.smartphones-samsung .btn-2, .smartphones-xiaomi .btn-2{
+    color: #000;
+}
+.smartphones-samsung .btn-2:hover, .smartphones-xiaomi .btn-2:hover{
+    color: #333;
+}
+
+/*XIAOMI*/
+.smartphones-xiaomi {
+    margin-top: 0rem;
+} 
+
+/*MEDIA QUERIES*/
+@media (max-width: 768px) {
+    .section-container {
+        margin: 0 1rem;
+    }
+    .title {
+        padding-left: 1rem;
+        font-size: 2rem;
+    }
+    .img {
+        width: 150px;
+        height: 180px;
+    }
+    .sub-title {
+        font-size: 1.5rem;
+    }
+}
