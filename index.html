@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EletroPoint</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header id="header">
@@ -21,20 +20,72 @@
                 <li><a href="./smartphones/smartphones.html">Telemóveis e Smartphones</a></li>
                 <li><a href="">Computadores e Portáteis</a></li>
                 <li><a href="">Tablets</a></li>
-                <li><a href="">Tvs</a></li>
                 <li><a href="">Consolas e Videojogos</a></li>
-                <li><a href="">Smartwatches</a></li>
-
             </ul>
             <div class="icons">
-                <a href="#"><i class="fa-solid fa-user"></i></a>
-                <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                </svg>
             </div>
         </nav>
     </header>
     <section class="carousel">
+        <div class="carousel-list">
+            <div class="item active">
+                <div class="carousel-img">
+                    <img src="./img/iphones/carousel-iphone-17-pro.jpg" alt="">
+                </div>
+                <div class="carousel-content">
+                    <p class="description">Design inovador, para o melhor desempenho e maior autonomia.</p>
+                    <p class="price">Desde 1349 €</p>
+                    <a href="./smartphones/iphone17Pro.html"><button class="btn" type="button">Compre</button></a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="carousel-img">
+                    <img src="" alt="">
+                </div>
+                <div class="carousel-content">
+                    <p class="price">Desde 1349 €</p>
+                    <a href="./smartphones/iphone17Pro.html"><button class="btn" type="button">Compre/button></a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="carousel-img">
+                    <img src="" alt="">
+                </div>
+                <div class="carousel-content">
+                    <p class="price">Desde 1349 €</p>
+                    <button class="btn" onclick="location.href=''" title="Compre">Compre</button>
+                </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="arrows">
+            <button class="arrow-btn" id="prev-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                </svg>
+            </button>
+            <button class="arrow-btn" id="next-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </button>
+        </div>
+        <div class="indicators">
+            <div class="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
     </section>
-    
+    <script src="script.js"></script>
 </body>
 </html>
