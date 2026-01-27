@@ -6,7 +6,6 @@
     <title>EletroPoint</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../smartphones/style-smartphones.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header id="header">
@@ -15,7 +14,9 @@
             <div class="search-box">
                 <input type="text" placeholder="O que estás à procura?">
                 <button class="search-btn">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
                 </button>
             </div>
             <ul class="nav-list">
@@ -25,298 +26,363 @@
                 <li><a href="">Consolas e Videojogos</a></li>
             </ul>
             <div class="icons">
-                <a href="#"><i class="fa-solid fa-user"></i></a>
-                <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                </svg>
             </div>
         </nav>
     </header>
 
-    <section class="smartphones-apple">
-        <div class="title">iPhone</div>
-        <div class="section-container">
-            <div class="containers">
-                <div>
-                    <img src="../img/iphones/iphone_17pro.jpg" alt="Iphone 17 Pro" class="img">
+    <section class="carousel">
+        <div class="carousel-list">
+            <div class="item1 item active">
+                <div class="carousel-img">
+                    <img src="../img/iphones/carousel-iphone-17-pro.jpg" alt="">
                 </div>
-                <p class="sub-title">Iphone 17 Pro</p>
-                <p class="description">Design inovador, para o melhor</p>
-                <p class="description2">desempenho e maior autonomia.</p>
-                <p class="price">Desde 1349 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
+                <div class="carousel-content">
+                    <p class="price">Desde 1349 €</p>
+                    <div class="button">
+                        <button class="btn" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
+                    </div>
                 </div>
             </div>
-            <div class="containers">
-                <div>
-                    <img src="../img/iphones/iphone_air.jpg" alt="Iphone Air" class="img">
+            <div class="item2 item">
+                <div class="carousel-img">
+                    <img src="../img/samsung/s-25-ultra-carousel.jpg" alt="">
                 </div>
-                <p class="sub-title project-title">Iphone Air</p>
-                <p class="description">O iPhone mais fino de sempre.</p>
-                <p class="description2">Com a força de um pro.</p>
-                <p class="price">Desde 1249 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
+                <div class="carousel-content">
+                    <p class="price">Desde 1249 €</p>
+                    <div class="button">
+                        <button class="btn" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
+                    </div>
                 </div>
             </div>
-            <div class="containers">
-                <div>
-                    <img src="../img/iphones/iphone_17.jpg" alt="Iphone 17" class="img">
+            <div class="item3 item">
+                <div class="carousel-img">
+                    <img src="../img/iphones/iPhone_Air_Lineup_Print__GBEN-1024x889.jpg" alt="">
                 </div>
-                <p class="sub-title project-title">Iphone 17</p>
-                <p class="description">Ainda mais resistente.</p>
-                <p class="description2">Ainda mais irresistível.</p>
-                <p class="price">Desde 989 €</p>
-               <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
+                <div class="carousel-content">
+                    <p class="price">Desde 989 €</p>
+                    <div class="button">
+                        <button class="btn" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
+                    </div>
                 </div>
             </div>
-            <div class="containers">
-                <div>
-                    <img src="../img/iphones/iphone_16.jpg" alt="Iphone 16" class="img">
+            <div class="item4 item">
+                <div class="carousel-img">
+                    <img src="../img/samsung/s-25-ultra-carousel.jpg" alt="">
                 </div>
-                <p class="sub-title project-title">Iphone 16</p>
-                <p class="description">Desempenho incrível.</p>
-                <p class="description2">Design resistente.</p>
-                <p class="price">Desde 889 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
+                <div class="carousel-content">
+                    <p class="price">Desde 989 €</p>
+                    <div class="button">
+                        <button class="btn" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
+                    </div>
                 </div>
             </div>
-            <div class="containers">
-                <div>
-                    <img src="../img/iphones/iphone_16e.jpg" alt="Iphone 16e" class="img">
-                </div>
-                <p class="sub-title project-title">Iphone 16e</p>
-                <p class="description">Tudo o que adora.</p>
-                <p class="description2">Até mesmo o preço.</p>
-                <p class="price">Desde 739 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
-                </div>
+        </div>
+
+        <div class="arrows">
+            <button class="arrow-btn" id="prev-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                </svg>
+            </button>
+            <button class="arrow-btn" id="next-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </button>
+        </div>
+        <div class="indicators">
+            <div class="dots">
+                <div class="dot dot1 active"></div>
+                <div class="dot dot2"></div>
+                <div class="dot dot3"></div>
+                <div class="dot dot4"></div>
             </div>
         </div>
     </section>
 
-    <section class="smartphones-samsung">
-        <div class="title">Samsung</div>
-        <div class="section-container">
-            <div class="containers">
-                <div>
-                    <img src="../img/samsung/galaxy-s25-ultra.png" alt="Galaxy S25 Ultra" class="img">
-                </div>
-                <p class="sub-title">Galaxy S25 Ultra</p>
-                <p class="description">O Galaxy mais premium, com</p>
-                <p class="description2">câmara e desempenho de Ultra.</p>
-                <p class="price">Desde 1149 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
-                </div>
+    <section class="title-filters">
+        <div class="title"><p>Telemóveis e Smartphones</p></div>
+        <section class="filters">
+            <div class="filter-group">
+                <label for="sort">Ordenar por</label>
+                <select id="sort">
+                <option value="relevance">Relevância</option>
+                <option value="price-asc">Preço: menor para maior</option>
+                <option value="price-desc">Preço: maior para menor</option>
+                </select>
             </div>
-            <div class="containers">
-                <div>
-                    <img src="../img/samsung/galaxy-z-fold7.png" alt="Galaxy Z Fold 7" class="img">
-                </div>
-                <p class="sub-title project-title">Galaxy Z Fold 7</p>
-                <p class="description">Produtividade e multitarefas</p>
-                <p class="description2">sem limites. Tela sem igual.</p>
-                <p class="price">Desde 1999 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
-                </div>
-            </div>
-            <div class="containers">
-                <div>
-                    <img src="../img/samsung/galaxy-z-flip7.png" alt="Galaxy Z Flip 7" class="img">
-                </div>
-                <p class="sub-title project-title">Galaxy Z Flip 7</p>
-                <p class="description">Compacto no bolso e gigante em</p>
-                <p class="description2">inovação. Tecnologia dobrável.</p>
-                <p class="price">Desde 999 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
-                </div>
-            </div>
-            <div class="containers">
-                <div>
-                    <img src="../img/samsung/galaxy-s25-edge.png" alt="Galaxy S25 Edge" class="img">
-                </div>
-                <p class="sub-title project-title">Galaxy S25 Edge</p>
-                <p class="description">Fino, elegante e com um</p>
-                <p class="description2">desempenho poderoso.</p>
-                <p class="price">Desde 899 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
-                </div>
-            </div>
-            <div class="containers">
-                <div>
-                    <img src="../img/samsung/galaxy-s25.png" alt="Galaxy S25" class="img">
-                </div>
-                <p class="sub-title project-title">Galaxy S25</p>
-                <p class="description">Equilíbrio perfeito entre</p>
-                <p class="description2">potência e elegância.</p>
-                <p class="price">Desde 799 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="smartphones-xiaomi">
-        <div class="title">Xiaomi</div>
-        <div class="section-container">
-            <div class="containers">
-                <div>
-                    <img src="../img/xiaomi/xiaomi-15-ultra.png" alt="Xiaomi 15 Ultra" class="img">
-                </div>
-                <p class="sub-title project-title">Xiaomi 15 Ultra</p>
-                <p class="description">O máximo em câmera,</p>
-                <p class="description2">desempenho e elegância.</p>
-                <p class="price">Desde 1629 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
-                </div>
+            <div class="filter-group">
+                <label for="brand">Marca</label>
+                <select id="brand">
+                <option value="all">Todas</option>
+                <option value="apple">Apple</option>
+                <option value="google">Google</option>
+                <option value="samsung">Samsung</option>
+                <option value="xiaomi">Xiaomi</option>
+                </select>
             </div>
-            <div class="containers">
-                <div>
-                    <img src="../img/xiaomi/xiaomi-15.png" alt="Xiaomi 15" class="img">
-                </div>
-                <p class="sub-title project-title">Xiaomi 15</p>
-                <p class="description">Potência equilibrada.</p>
-                <p class="description2">Experiência premium.</p>
-                <p class="price">Desde 699 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
-                </div>
-            </div>
-            <div class="containers">
-                <div>
-                    <img src="../img/xiaomi/xiaomi-15t-pro.png" alt="Xiaomi 15T Pro" class="img">
-                </div>
-                <p class="sub-title project-title">Xiaomi 15T Pro</p>
-                <p class="description">Performance avançada,</p>
-                <p class="description2">para quem exige mais.</p>
-                <p class="price">Desde 709 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
-                </div>
-            </div>
-            <div class="containers">
-                <div>
-                    <img src="../img/xiaomi/xiaomi-15t.png" alt="Xiaomi 15T" class="img">
-                </div>
-                <p class="sub-title project-title">Xiaomi 15T</p>
-                <p class="description">Tecnologia e Fluidez que</p>
-                <p class="description2">acompanha o seu ritmo.</p>
-                <p class="price">Desde 599 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
-                </div>
-            </div>
-            <div class="containers">
-                <div>
-                    <img src="../img/xiaomi/redmi-note-15-pro+.png" alt="Redmi Note 15 Pro+" class="img">
-                </div>
-                <p class="sub-title project-title">Redmi Note 15 Pro+</p>
-                <p class="description">Potência pensada para</p>
-                <p class="description2">o dia a dia.</p>
-                <p class="price">Desde 499 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="smartphones-google">
-        <div class="title">Google</div>
-        <div class="section-container">
-            <div class="containers">
-                <div>
-                    <img src="../img/google/pixel-10-pro-xl.jpg" alt="Pixel 10 Pro XL" class="img">
-                </div>
-                <p class="sub-title">Pixel 10 Pro XL</p>
-                <p class="description">O novo padrão para telemóveis</p>
-                <p class="description2">profissionais.</p>
-                <p class="price">Desde 1099 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
-                </div>
-            </div>
-            <div class="containers">
-                <div>
-                    <img src="../img/google/pixel-10-pro.jpg" alt="Pixel 10 Pro" class="img">
-                </div>
-                <p class="sub-title project-title">Pixel 10 Pro</p>
-                <p class="description">Precisão, desempenho e</p>
-                <p class="description2">fotografia impecável.</p>
-                <p class="price">Desde 929 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
-                </div>
-            </div>
-            <div class="containers">
-                <div>
-                    <img src="../img/google/pixel-10.jpg" alt="Pixel 10" class="img">
-                </div>
-                <p class="sub-title project-title">Pixel 10</p>
-                <p class="description">Simples, inteligente e poderoso.</p>
-                <p class="description2">A experiência pura do Android.</p>
-                <p class="price">Desde 799 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
-                </div>
-            </div>
-            <div class="containers">
-                <div>
-                    <img src="../img/google/pixel-9-pro-xl.jpg" alt="Pixel 9 Pro XL" class="img">
-                </div>
-                <p class="sub-title project-title">Pixel 9 Pro XL</p>
-                <p class="description">Totalmente pro.</p>
-                <p class="description2">Até no tamanho.</p>
-                <p class="price">Desde 889 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
-                </div>
-            </div>
-            <div class="containers">
-                <div>
-                    <img src="../img/google/pixel-9-pro.jpg" alt="Pixel 9 Pro" class="img">
-                </div>
-                <p class="sub-title project-title">Pixel 9 Pro</p>
-                <p class="description">Câmera profissional, inteligência real.</p>
-                <p class="description2">Tamanho ideal para o seu bolso.</p>
-                <p class="price">Desde 879 €</p>
-                <div class="button">
-                    <button class="btn-1" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
-                    <button class="btn-2" onclick="location.href=''" title="Compre">Compre</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-     <section class="footer">
-
         </section>
+    </section>
+
+    <section class="section-produts">
+        <div class="smartphones">
+            <div class="section-container">
+                <div class="containers smartphones-apple">
+                    <div>
+                        <img src="../img/iphones/iphone_17pro.jpg" alt="Iphone 17 Pro" class="img">
+                    </div>
+                    <p class="sub-title">Iphone 17 Pro</p>
+                    <p class="description">Design inovador, para o melhor</p>
+                    <p class="description2">desempenho e maior autonomia.</p>
+                    <p class="price">Desde 1349 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-apple">
+                    <div>
+                        <img src="../img/iphones/iphone_air.jpg" alt="Iphone Air" class="img">
+                    </div>
+                    <p class="sub-title project-title">Iphone Air</p>
+                    <p class="description">O iPhone mais fino de sempre.</p>
+                    <p class="description2">Com a força de um pro.</p>
+                    <p class="price">Desde 1249 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-apple">
+                    <div>
+                        <img src="../img/iphones/iphone_17.jpg" alt="Iphone 17" class="img">
+                    </div>
+                    <p class="sub-title project-title">Iphone 17</p>
+                    <p class="description">Ainda mais resistente.</p>
+                    <p class="description2">Ainda mais irresistível.</p>
+                    <p class="price">Desde 989 €</p>
+                <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                        
+                    </div>
+                </div>
+                <div class="containers smartphones-apple">
+                    <div>
+                        <img src="../img/iphones/iphone_16.jpg" alt="Iphone 16" class="img">
+                    </div>
+                    <p class="sub-title project-title">Iphone 16</p>
+                    <p class="description">Desempenho incrível.</p>
+                    <p class="description2">Design resistente.</p>
+                    <p class="price">Desde 889 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-apple">
+                    <div>
+                        <img src="../img/iphones/iphone_16e.jpg" alt="Iphone 16e" class="img">
+                    </div>
+                    <p class="sub-title project-title">Iphone 16e</p>
+                    <p class="description">Tudo o que adora.</p>
+                    <p class="description2">Até mesmo o preço.</p>
+                    <p class="price">Desde 739 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-samsung">
+                    <div>
+                        <img src="../img/samsung/galaxy-s25-ultra.png" alt="Galaxy S25 Ultra" class="img">
+                    </div>
+                    <p class="sub-title">Galaxy S25 Ultra</p>
+                    <p class="description">O Galaxy mais premium, com</p>
+                    <p class="description2">câmara e desempenho de Ultra.</p>
+                    <p class="price">Desde 1149 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-samsung">
+                    <div>
+                        <img src="../img/samsung/galaxy-z-fold7.png" alt="Galaxy Z Fold 7" class="img">
+                    </div>
+                    <p class="sub-title project-title">Galaxy Z Fold 7</p>
+                    <p class="description">Produtividade e multitarefas</p>
+                    <p class="description2">sem limites. Tela sem igual.</p>
+                    <p class="price">Desde 1999 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-samsung">
+                    <div>
+                        <img src="../img/samsung/galaxy-z-flip7.png" alt="Galaxy Z Flip 7" class="img">
+                    </div>
+                    <p class="sub-title project-title">Galaxy Z Flip 7</p>
+                    <p class="description">Compacto no bolso e gigante em</p>
+                    <p class="description2">inovação. Tecnologia dobrável.</p>
+                    <p class="price">Desde 999 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-samsung">
+                    <div>
+                        <img src="../img/samsung/galaxy-s25-edge.png" alt="Galaxy S25 Edge" class="img">
+                    </div>
+                    <p class="sub-title project-title">Galaxy S25 Edge</p>
+                    <p class="description">Fino, elegante e com um</p>
+                    <p class="description2">desempenho poderoso.</p>
+                    <p class="price">Desde 899 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-samsung">
+                    <div>
+                        <img src="../img/samsung/galaxy-s25.png" alt="Galaxy S25" class="img">
+                    </div>
+                    <p class="sub-title project-title">Galaxy S25</p>
+                    <p class="description">Equilíbrio perfeito entre</p>
+                    <p class="description2">potência e elegância.</p>
+                    <p class="price">Desde 799 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-xiaomi">
+                    <div>
+                        <img src="../img/xiaomi/xiaomi-15-ultra.png" alt="Xiaomi 15 Ultra" class="img">
+                    </div>
+                    <p class="sub-title project-title">Xiaomi 15 Ultra</p>
+                    <p class="description">O máximo em câmera,</p>
+                    <p class="description2">desempenho e elegância.</p>
+                    <p class="price">Desde 1629 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-xiaomi">
+                    <div>
+                        <img src="../img/xiaomi/xiaomi-15.png" alt="Xiaomi 15" class="img">
+                    </div>
+                    <p class="sub-title project-title">Xiaomi 15</p>
+                    <p class="description">Potência equilibrada.</p>
+                    <p class="description2">Experiência premium.</p>
+                    <p class="price">Desde 699 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-xiaomi">
+                    <div>
+                        <img src="../img/xiaomi/xiaomi-15t-pro.png" alt="Xiaomi 15T Pro" class="img">
+                    </div>
+                    <p class="sub-title project-title">Xiaomi 15T Pro</p>
+                    <p class="description">Performance avançada,</p>
+                    <p class="description2">para quem exige mais.</p>
+                    <p class="price">Desde 709 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-xiaomi">
+                    <div>
+                        <img src="../img/xiaomi/xiaomi-15t.png" alt="Xiaomi 15T" class="img">
+                    </div>
+                    <p class="sub-title project-title">Xiaomi 15T</p>
+                    <p class="description">Tecnologia e Fluidez que</p>
+                    <p class="description2">acompanha o seu ritmo.</p>
+                    <p class="price">Desde 599 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-xiaomi">
+                    <div>
+                        <img src="../img/xiaomi/redmi-note-15-pro+.png" alt="Redmi Note 15 Pro+" class="img">
+                    </div>
+                    <p class="sub-title project-title">Redmi Note 15 Pro+</p>
+                    <p class="description">Potência pensada para</p>
+                    <p class="description2">o dia a dia.</p>
+                    <p class="price">Desde 499 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-google">
+                    <div>
+                        <img src="../img/google/pixel-10-pro-xl.jpg" alt="Pixel 10 Pro XL" class="img">
+                    </div>
+                    <p class="sub-title">Pixel 10 Pro XL</p>
+                    <p class="description">O novo padrão para telemóveis</p>
+                    <p class="description2">profissionais.</p>
+                    <p class="price">Desde 1099 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-google">
+                    <div>
+                        <img src="../img/google/pixel-10-pro.jpg" alt="Pixel 10 Pro" class="img">
+                    </div>
+                    <p class="sub-title project-title">Pixel 10 Pro</p>
+                    <p class="description">Precisão, desempenho e</p>
+                    <p class="description2">fotografia impecável.</p>
+                    <p class="price">Desde 929 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-google">
+                    <div>
+                        <img src="../img/google/pixel-10.jpg" alt="Pixel 10" class="img">
+                    </div>
+                    <p class="sub-title project-title">Pixel 10</p>
+                    <p class="description">Simples, inteligente e poderoso.</p>
+                    <p class="description2">A experiência pura do Android.</p>
+                    <p class="price">Desde 799 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-google">
+                    <div>
+                        <img src="../img/google/pixel-9-pro-xl.jpg" alt="Pixel 9 Pro XL" class="img">
+                    </div>
+                    <p class="sub-title project-title">Pixel 9 Pro XL</p>
+                    <p class="description">Totalmente pro.</p>
+                    <p class="description2">Até no tamanho.</p>
+                    <p class="price">Desde 889 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+                <div class="containers smartphones-google">
+                    <div>
+                        <img src="../img/google/pixel-9-pro.jpg" alt="Pixel 9 Pro" class="img">
+                    </div>
+                    <p class="sub-title project-title">Pixel 9 Pro</p>
+                    <p class="description">Câmera profissional, inteligência real.</p>
+                    <p class="description2">Tamanho ideal para o seu bolso.</p>
+                    <p class="price">Desde 879 €</p>
+                    <div class="button">
+                        <button class="btn-1" onclick="location.href=''" title="Compre">Compre</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer"></section>
+
+    <script src="../script.js"></script>
+
 </body>
 </html>
