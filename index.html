@@ -13,7 +13,9 @@
             <div class="search-box">
                 <input type="text" placeholder="O que estás à procura?">
                 <button class="search-btn">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
                 </button>
             </div>
             <ul class="nav-list">
@@ -33,35 +35,51 @@
             </div>
         </nav>
     </header>
+
     <section class="carousel">
         <div class="carousel-list">
-            <div class="item active">
+            <div class="item1 item active">
                 <div class="carousel-img">
                     <img src="./img/iphones/carousel-iphone-17-pro.jpg" alt="">
                 </div>
                 <div class="carousel-content">
-                    <p class="description">Design inovador, para o melhor desempenho e maior autonomia.</p>
                     <p class="price">Desde 1349 €</p>
-                    <a href="./smartphones/iphone17Pro.html"><button class="btn" type="button">Compre</button></a>
+                    <div class="button">
+                        <button class="btn" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
+                    </div>
                 </div>
             </div>
-            <div class="item">
+            <div class="item2 item">
                 <div class="carousel-img">
-                    <img src="" alt="">
+                    <img src="./img/samsung/s-25-ultra-carousel.jpg" alt="">
                 </div>
                 <div class="carousel-content">
-                    <p class="price">Desde 1349 €</p>
-                    <a href="./smartphones/iphone17Pro.html"><button class="btn" type="button">Compre/button></a>
+                    <p class="price">Desde 1249 €</p>
+                    <div class="button">
+                        <button class="btn" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
+                    </div>
                 </div>
             </div>
-            <div class="item">
+            <div class="item3 item">
                 <div class="carousel-img">
-                    <img src="" alt="">
+                    <img src="./img/iphones/iPhone_Air_Lineup_Print__GBEN-1024x889.jpg" alt="">
                 </div>
                 <div class="carousel-content">
-                    <p class="price">Desde 1349 €</p>
-                    <button class="btn" onclick="location.href=''" title="Compre">Compre</button>
+                    <p class="price">Desde 989 €</p>
+                    <div class="button">
+                        <button class="btn" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
+                    </div>
                 </div>
+            </div>
+            <div class="item4 item">
+                <div class="carousel-img">
+                    <img src="./img/samsung/s-25-ultra-carousel.jpg" alt="">
+                </div>
+                <div class="carousel-content">
+                    <p class="price">Desde 989 €</p>
+                    <div class="button">
+                        <button class="btn" onclick="location.href=''" title="Saiba mais">Saiba mais</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -80,12 +98,14 @@
         </div>
         <div class="indicators">
             <div class="dots">
-                <div class="dot active"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+                <div class="dot dot1 active"></div>
+                <div class="dot dot2"></div>
+                <div class="dot dot3"></div>
+                <div class="dot dot4"></div>
             </div>
         </div>
     </section>
+
     <script src="script.js"></script>
 </body>
 </html>
