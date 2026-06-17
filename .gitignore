@@ -22,6 +22,7 @@ staticfiles/
 # Ficheiros de dados / exportações
 *.xlsx
 *.csv
+*.pbix
 
 # Editor / SO
 .vscode/
