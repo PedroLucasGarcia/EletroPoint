@@ -1,0 +1,34 @@
+# Ambiente virtual
+venv/
+env/
+*.venv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Django
+db.sqlite3
+db.sqlite3-journal
+*.log
+media/
+staticfiles/
+
+# Variáveis de ambiente (NUNCA enviar para o GitHub)
+.env
+
+# Ficheiros de dados / exportações
+*.xlsx
+*.csv
+
+# Editor / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Migrações (opcional - remove esta linha se quiseres versionar as migrações)
+# */migrations/*.py
+# !*/migrations/__init__.py
