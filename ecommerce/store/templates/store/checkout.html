@@ -1,0 +1,187 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block title %}EletroPoint - Checkout{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/productlist.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cart-checkout.css' %}">
+{% endblock %}
+
+{% block extra_js_head %}
+    <script src="{% static 'js/checkout.js' %}" defer></script>
+{% endblock %}
+
+<body>
+    {% block content %}
+    <div class="links">
+        <a href="{% url 'cart' %}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M8.70710678,12 L18.5,12 C18.7761424,12 19,12.2238576 19,12.5 C19,12.7761424 18.7761424,13 18.5,13 L8.70710678,13 L11.8535534,16.1464466 C12.0488155,16.3417088 12.0488155,16.6582912 11.8535534,16.8535534 C11.6582912,17.0488155 11.3417088,17.0488155 11.1464466,16.8535534 L7.14644661,12.8535534 C6.95118446,12.6582912 6.95118446,12.3417088 7.14644661,12.1464466 L11.1464466,8.14644661 C11.3417088,7.95118446 11.6582912,7.95118446 11.8535534,8.14644661 C12.0488155,8.34170876 12.0488155,8.65829124 11.8535534,8.85355339 L8.70710678,12 Z"/>
+            </svg>
+        </a>
+        <a href="{% url 'cart' %}">Voltar para o carrinho</a>
+    </div> 
+    <section class="checkout-section">
+        <div class="checkout-container">
+            <div class="checkout-title">
+                <p>Finalizar Compra</p>
+            </div>
+            <div class="info">
+                <!-- FORMULÁRIO -->
+                <div id="form-wrapper">
+                    <form id="form">
+                        <div class="contact-info">
+                            <div id="user-info">
+                                <div class="title-info">
+                                    <p>Dados do comprador</p>
+                                </div>
+                                <div class="form-field">
+                                    <input class="form-control name" type="text" name="nome" placeholder="Nome">
+                                </div>
+                                <div class="form-field">
+                                    <input class="form-control email" type="text" name="email" placeholder="Email">
+                                </div>
+                                <div class="form-field">
+                                    <input class="form-control cell" type="text" name="telemóvel" placeholder="Telemóvel">
+                                </div>
+                            </div>
+                            <div id="shipping-info" class="address-info">
+                                <div class="title-info">
+                                    <p>Dados da entrega</p>
+                                </div>
+                                <div class="form-field">
+                                    <input class="form-control address" type="text" name="morada" placeholder="Morada">
+                                </div>
+                                <div class="form-field">
+                                    <input class="form-control zipcode" type="text" name="código postal" placeholder="Código postal">
+                                </div>
+                                <div class="form-field">
+                                    <input class="form-control city" type="text" name="cidade" placeholder="Cidade">
+                                </div>
+                                <div class="form-field">
+                                    <input class="form-control country" type="text" name="país" placeholder="País">
+                                </div>
+                            </div>
+                            <div id="payment-info">
+                                <div class="title-info">
+                                    <p>Opções de pagamento</p>
+                                    <div id="paypal-button-container"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- RESUMO -->
+                <div class="resume-info">
+                    <div class="title-info">
+                        <p>Resumo da compra</p>
+                    </div>
+
+                    {% for item in items %}
+                    <div class="resume-items">
+                        <!-- Imagem -->
+                        <div class="resume-img">
+                            <a href="/product/{{ item.product.slug }}/" title="{{ item.product.name }}">
+                                <img src="{% if item.color_image %}{{ item.color_image }}{% else %}{{ item.product.imageURL }}{% endif %}" alt="{{ item.product.name }}">
+                            </a>
+                        </div>
+
+                        <!-- Nome e variantes -->
+                        <div class="resume-name">
+                            <a href="/product/{{ item.product.slug }}/" class="resume-name-link">
+                                <p class="resume-product-name">{{ item.product.name }}</p>
+                            </a>
+                            <div class="resume-variants">
+                                {% if item.color %}
+                                    <span class="resume-variant-tag">Cor: {{ item.color }}</span>
+                                {% endif %}
+                                {% if item.storage %}
+                                    <span class="resume-variant-tag">Capacidade: {{ item.storage }}</span>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Quantidade + preço + X -->
+                        <div class="resume-right">
+                            <div class="resume-quantity-controls">
+                                <button
+                                    data-product="{{ item.product.id }}"
+                                    data-color="{{ item.color }}"
+                                    data-storage="{{ item.storage }}"
+                                    data-action="remove"
+                                    data-context="checkout"
+                                    class="resume-qty-btn update-cart">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+                                    </svg>
+                                </button>
+                                <span class="resume-qty-number">{{ item.quantity }}</span>
+                                <button
+                                    data-product="{{ item.product.id }}"
+                                    data-color="{{ item.color }}"
+                                    data-storage="{{ item.storage }}"
+                                    data-action="add"
+                                    data-context="checkout"
+                                    class="resume-qty-btn update-cart">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="resume-price-value">
+                                {% if item.custom_price %}
+                                    {{ item.get_total|floatformat:2 }}
+                                {% else %}
+                                    {{ item.get_total|floatformat:2 }}
+                                {% endif %}
+                                €
+                            </p>
+                            <!-- Botão X — canto direito -->
+                            <button
+                                data-product="{{ item.product.id }}"
+                                data-color="{{ item.color }}"
+                                data-storage="{{ item.storage }}"
+                                data-action="delete"
+                                class="delete-item-btn resume-delete-btn"
+                                title="Remover produto">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                    </div>
+                    {% endfor %}
+
+                    <!-- Totais -->
+                    <div class="resume-totals">
+                        <div class="resume-line subtotal">
+                            <span>Subtotal</span>
+                            <span>{{ order.get_cart_total|floatformat:2 }} €</span>
+                        </div>
+                        <div class="resume-line cust">
+                            <span>Custos de envio</span>
+                            <span>0.00 €</span>
+                        </div>
+                        <div class="resume-line total">
+                            <span>Total</span>
+                            <span>{{ order.get_cart_total|floatformat:2 }} €</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=AaU_4f5Rvy-OZauED8Ixj0IRA1Pgn6DoEXLnHLzCwteSzUNR6CG1Z8MbROV4mT22xINSa0K5OVXLr8Vp&currency=EUR&disable-funding=credit&components=buttons"></script>
+    <script>
+        var shipping = '{{ order.shipping }}';
+        var total = '{{ order.get_cart_total|floatformat:2 }}';
+        var homepageUrl = "{% url 'homepage' %}";
+        var processOrderUrl = "{% url 'processOrder' %}";
+    </script>
+    {% endblock %}
+</body>
+</html>

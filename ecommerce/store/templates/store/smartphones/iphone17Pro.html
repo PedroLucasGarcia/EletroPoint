@@ -1,0 +1,333 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block title %}EletroPoint - Iphone 17 Pro{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+{% endblock %}
+
+{% block extra_js_head %}
+    <script src="{% static 'js/img-zoom.js' %}" defer></script>
+{% endblock %}
+
+<body>
+    {% block content %}
+    <div class="links">
+        <a href="{% url 'homepage' %}">Início</a>
+        <a class="bars">/</a>
+        <a href="{% url 'smartphones' %}">Smartphones</a>
+        <a class="bars">/</a>
+        <a href="{% url 'smartphoneApple' %}">Smartphone Apple</a>
+        <a class="bars">/</a>
+        <a href="{% url 'iphone17Pro' %}">iPhone 17 Pro</a>
+    </div> 
+    <section class="section-container">   
+        <section class="carousel">
+            <div class="carousel-list">
+                <div class="item1 item active">
+                    <div class="carousel-img">
+                        <img src="{% static 'img/iphone-17-pro-branco.webp' %}" class="img">
+                    </div>
+                </div>
+                <div class="item2 item">
+                    <div class="carousel-img">
+                        <img src="{% static 'img/iphone-17-pro-todos.webp' %}" class="img">
+                    </div>
+                </div>
+                <div class="item3 item">
+                    <div class="carousel-img">
+                        <img src="{% static 'img/iphone-17-pro-info.webp' %}" class="img">
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrows">
+                <button class="arrow-btn" id="prev-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                    </svg>
+                </button>
+                <button class="arrow-btn" id="next-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="indicators">
+                <div class="dots">
+                    <div class="dot dot1 active"></div>
+                    <div class="dot dot2"></div>
+                    <div class="dot dot3"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODAL DE ZOOM -->
+        <div class="image-modal" id="imageModal">
+            <button class="modal-close" id="modalClose">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                </svg>
+            </button>
+
+            <button class="modal-arrow modal-prev" id="modalPrev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                </svg>
+            </button>
+
+            <img src="" alt="Zoom" id="modalImage">
+
+            <button class="modal-arrow modal-next" id="modalNext">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </button>
+
+            <div class="modal-dots" id="modalDots">
+                <div class="modal-dot" data-index="0"></div>
+                <div class="modal-dot" data-index="1"></div>
+                <div class="modal-dot" data-index="2"></div>
+            </div>
+        </div>
+
+        <section class="section-container-info">
+            <div class="container-info">
+                <p class="title-info">{{ product.name }}</p>
+                <p class="description-info">{{ product.description }}</p>
+                <p class="color-label">Cor:
+                    <button class="color-btn active" data-color="Prateado" style="background:#CFCFCF; border-color:#dfd9d9;"></button>
+                    <button class="color-btn" data-color="Laranja Cósmico" style="background:#F56D31; border-color:#b64613;"></button>
+                    <button class="color-btn" data-color="Azul Escuro" style="background:#374055; border-color:#09245e;"></button>
+                </p>
+                <p class="selected-color">Cor selecionada: <span id="color-name">Prateado</span></p>
+
+                <p class="capacity-label">Memória interna:
+                    <button class="cap-btn active" data-cap="256 GB" data-price="{{ product.price }}">256 GB</button>
+                    <button class="cap-btn" data-cap="512 GB" data-price="1519">512 GB</button>
+                    <button class="cap-btn" data-cap="1 TB" data-price="1808">1 TB</button>
+                </p>
+                <div class="quantity-controls">
+                    <p>Quantidade: </p>
+                    <button class="qty-minus quantity-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+                        </svg>
+                    </button>
+                    <span class="quantity" id="qty-display">1</span>
+                    <button class="qty-plus quantity-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                        </svg>
+                    </button>
+                </div>
+                <p class="item-price-total">Valor: <span id="price-display">{{ product.price|floatformat:2 }}</span> €</p>
+                <div class="button">
+                    <button id="buy-btn" class="btn btn-1" title="Adicionar ao carrinho">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="section-description">
+        <div class="container-description">
+            <p class="title-description">Detalhes do Produto</p>
+            <p class="description-description">O smartphone iPhone 17 Pro é o novo símbolo de excelência da Apple, combinando performance profissional e design durável. 
+                Com estrutura unibody forjada em alumínio ultrarresistente, oferece autonomia recorde e eficiência térmica graças à Câmara de 
+                Evaporação integrada com o chip A19 Pro. Prepare-se para uma experiência visual imersiva com o ecrã Super Retina XDR ProMotion 
+                a 120 Hz, brilho extremo e revestimento anti-reflexo avançado. O impressionante sistema de câmaras Pro traz três sensores Fusion 
+                de 48 MP, incluindo uma teleobjetiva tetraprisma de última geração com zoom ótico até 16x (equivalente a 200mm), combinado com um 
+                sensor 56% maior para capturas excepcionais, mesmo com pouca luz. A câmara frontal com Center Stage oferece enquadramento inteligente 
+                ideal para selfies e videochamadas. O CPU Apple A19 Pro alia eficiência e potência, enquanto o iOS mais recente e a Apple Intelligence 
+                trazem funcionalidades avançadas como tradução em tempo real e criação de conteúdo com um toque — tudo com um visual renovado e fluido.</p>
+            <p class="description-description"><strong>Operador:</strong> Livre<br>
+                <strong>Dual SIM:</strong> Dual SIM (nano‑SIM e eSIM)<br>
+                <strong>Rede:</strong> 5G<br>
+                <strong>Sistema Operativo:</strong> iOS<br>
+                <strong>Chipset:</strong> Apple A19 Pro (3 nm)<br>
+                <strong>Processador:</strong> Hexa-core<br>
+                <strong>Gráfica:</strong> Apple GPU (6-core graphics)<br>
+                <strong>Armazenamento:</strong> 256 GB<br>
+                <strong>Ecrã:</strong><br>
+                Ecrã Super Retina XDR<br>
+                Ecrã OLED integral de 6,3 polegadas (diagonal)<br>
+                Resolução de 2622x1206 píxeis a 460 ppp<br>
+                <strong>Câmaras Traseiras:</strong><br>
+                48 MP, f/1.6, 24mm (wide), 1/1.28", 1.22µm, dual pixel PDAF, sensor-shift OIS<br>
+                48 MP, f/2.8, 100mm (periscope telephoto), 1/2.55", 0.7µm, PDAF, 3D sensor‑shift OIS, 4x optical zoom<br>
+                48 MP, f/2.2, 13mm, 120˚ (ultrawide), 1/2.55", 0.7µm, PDAF<br>
+                TOF 3D LiDAR scanner (depth)<br>
+                <strong>Câmara Frontal:</strong><br>
+                18 MP multi-aspect, f/1.9, (wide), PDAF, OIS<br>
+                SL 3D, (depth/biometrics sensor)<br>
+                <strong>Dados:</strong><br>
+                WLAN: Wi‑Fi 7 (802.11be) com tecnologia MIMO 2x2<br>
+                Bluetooth 6<br>
+                USB: USB-C<br>
+                NFC: Sim<br>
+                <strong>Sensores:</strong><br>
+                Face ID<br>
+                Sensor LiDAR<br>
+                Barómetro<br>
+                Giroscópio de grande amplitude dinâmica<br>
+                Acelerómetro de alta força G<br>
+                Sensor de proximidade<br>
+                Sensor de luz ambiente duplo<br>
+                <strong>GPS:</strong> GPS de dupla frequência e alta precisão (GPS, GLONASS, Galileo, QZSS, BeiDou e NavIC)<br>
+                <strong>Carrega­mento MagSafe e Wireless:</strong><br>
+                Carrega­mento wireless MagSafe até 25 W<br>
+                Carrega­mento wireless Qi2 até 25 W<br>
+                Série de ímanes<br>
+                Íman de alinhamento<br>
+                Identificação de acessórios NFC<br>
+                Magnetómetro<br>
+                <strong>Bateria:</strong> Bateria de iões de lítio 3988 mAh<br>
+                <strong>Dimensões do produto:</strong> 150 mm (A) x 71,9 mm (L) x 8,75 mm (P)<br>
+                <strong>Peso do produto:</strong> 204 g<br>
+                <br>
+                <strong>Conteúdo da Embalagem:</strong><br>
+                iPhone<br>
+                Cabo de carrega­mento USB‑C (1 m)<br>
+                Documentação</p>
+        </div>
+    </section>
+    {% endblock %}
+    {% block extra_js_body %}
+    <script>
+        var basePrice = {{ product.price }};
+        var currentPrice = basePrice;
+        var qty = 1;
+        var productId = "{{ product.id }}";
+
+        // Mapeamento cor → imagem (ajusta os paths às tuas imagens reais)
+        var colorImages = {
+            'Prateado':        "{% static 'img/iphone-17-pro-branco.webp' %}",
+            'Laranja Cósmico': "{% static 'img/iphone-17-pro-laranja.webp' %}",
+            'Azul Escuro':     "{% static 'img/iphone-17-pro-azul.webp' %}"
+        };
+
+        // Imagem ativa começa com a cor padrão
+        var currentColorImage = colorImages['Prateado'];
+
+        // ── CARROSSEL ──────────────────────────────────────────
+        var items = document.querySelectorAll('.carousel-list .item');
+        var dots  = document.querySelectorAll('.dot');
+        var current = 0;
+
+        function goTo(index) {
+            items[current].classList.remove('active');
+            dots[current].classList.remove('active');
+            current = (index + items.length) % items.length;
+            items[current].classList.add('active');
+            dots[current].classList.add('active');
+        }
+
+        document.getElementById('prev-btn').addEventListener('click', function() {
+            goTo(current - 1);
+        });
+
+        document.getElementById('next-btn').addEventListener('click', function() {
+            goTo(current + 1);
+        });
+
+        dots.forEach(function(dot, i) {
+            dot.addEventListener('click', function() { goTo(i); });
+        });
+
+        // ── ATUALIZA DISPLAY ───────────────────────────────────
+        function updateDisplay() {
+            document.getElementById('qty-display').textContent = qty;
+            document.getElementById('price-display').textContent = (currentPrice * qty).toFixed(2);
+        }
+
+        // ── QUANTIDADE ─────────────────────────────────────────
+        document.querySelector('.qty-minus').addEventListener('click', function() {
+            if (qty > 1) qty--;
+            updateDisplay();
+        });
+        document.querySelector('.qty-plus').addEventListener('click', function() {
+            qty++;
+            updateDisplay();
+        });
+
+        // ── MEMÓRIA ────────────────────────────────────────────
+        document.querySelectorAll('.cap-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.cap-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentPrice = parseFloat(this.dataset.price);
+                updateDisplay();
+            });
+        });
+
+        // ── COR ────────────────────────────────────────────────
+        document.querySelectorAll('.color-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                var selectedColor = this.dataset.color;
+                document.getElementById('color-name').textContent = selectedColor;
+
+                // Troca só a imagem do primeiro slide (item1)
+                if (colorImages[selectedColor]) {
+                    currentColorImage = colorImages[selectedColor];
+                    document.querySelector('.item1 .carousel-img img').src = currentColorImage;
+                }
+            });
+        });
+
+        // ── BOTÃO ADICIONAR AO CARRINHO ────────────────────────
+        document.getElementById('buy-btn').addEventListener('click', function() {
+            var color   = document.getElementById('color-name').textContent;
+            var storage = document.querySelector('.cap-btn.active').dataset.cap;
+
+            if (user == 'AnonymousUser') {
+                var itemKey = productId + '_' + color + '_' + storage;
+                if (cart[itemKey] == undefined) {
+                    cart[itemKey] = {
+                        'quantity': qty,
+                        'productId': productId,
+                        'color': color,
+                        'storage': storage,
+                        'custom_price': currentPrice,
+                        'color_image': currentColorImage
+                    };
+                } else {
+                    cart[itemKey]['quantity'] += qty;
+                    cart[itemKey]['custom_price'] = currentPrice;
+                    cart[itemKey]['color_image'] = currentColorImage;
+                }
+                document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/";
+                window.location.href = '/cart/';
+            } else {
+                fetch('/update-item/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrftoken,
+                    },
+                    body: JSON.stringify({
+                        'productId': productId,
+                        'action': 'add',
+                        'quantity': qty,
+                        'color': color,
+                        'storage': storage,
+                        'custom_price': currentPrice,
+                        'color_image': currentColorImage
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    window.location.href = '/cart/';
+                });
+            }
+        });
+    </script>
+    {% endblock %}
+</body>
+</html>

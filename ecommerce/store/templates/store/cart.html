@@ -1,0 +1,85 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block title %}EletroPoint - Cart{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/productlist.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cart-checkout.css' %}">
+{% endblock %}
+
+<body>
+    {% block content %}
+    <section class="cart-section">
+        <div class="cart-container">
+            <div class="cart-title">
+                <p>O total do seu carrinho é <span class="cart-total">{{ order.get_cart_total|floatformat:2 }}</span> €.</p>
+            </div>
+            <div class="cart-title-buttons">
+                <div class="button">
+                    <a class="voltar-loja-btn btn2" href="{% url 'todos' %}" title="Voltar a loja">Voltar à loja</a>
+                </div>
+                <div class="button">
+                    <a class="checkout-btn btn" href="{% url 'checkout' %}" title="Continuar">Continuar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% for item in items %}
+    <section class="cart-items-section">
+        <div class="cart-items-container">
+            <div class="cart-items">
+                <div class="cart-item">
+                     <div class="item-image">
+                        <a href="/{{ item.product.slug }}/" title="{{ item.product.name }}">
+                            <img src="{% if item.color_image %}{{ item.color_image }}{% else %}{{ item.product.imageURL }}{% endif %}" alt="{{ item.product.name }}">
+                        </a>
+                    </div>
+                    <div class="item-details">
+                        <!-- Nome + variantes em coluna -->
+                        <div class="item-name-block">
+                            <a href="/{{ item.product.slug }}/" class="item-name-link">
+                                <h3 class="item-name">{{ item.product.name }}</h3>
+                            </a>
+                            <div class="item-variants">
+                                {% if item.color %}
+                                    <span class="item-variant-tag">Cor: {{ item.color }}</span>
+                                {% endif %}
+                                {% if item.storage %}
+                                    <span class="item-variant-tag">{{ item.storage }}</span>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Quantidade -->
+                        <div class="quantity-controls">
+                            <button data-product="{{ item.product.id }}" data-color="{{ item.color }}" data-storage="{{ item.storage }}" data-action="remove" class="quantity-btn update-cart">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+                                </svg>
+                            </button>
+                            <span class="quantity">{{ item.quantity }}</span>
+                            <button data-product="{{ item.product.id }}" data-color="{{ item.color }}" data-storage="{{ item.storage }}" data-action="add" class="quantity-btn update-cart">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Preço total -->
+                        <p class="item-price-total">Valor: {{ item.get_total|floatformat:2 }} €</p>
+
+                        <!-- Remover -->
+                        <div class="remove-item">
+                            <button data-product="{{ item.product.id }}" data-color="{{ item.color }}" data-storage="{{ item.storage }}" data-action="delete" class="delete-item-btn remove-btn update-cart">Remover</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+    {% endblock %}
+</body>
+</html>

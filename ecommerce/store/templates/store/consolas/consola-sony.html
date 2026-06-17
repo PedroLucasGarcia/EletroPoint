@@ -1,0 +1,67 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block title %}EletroPoint - Consolas Playstation{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/productlist.css' %}">
+{% endblock %}
+
+{% block extra_js_head %}
+    <script src="{% static 'js/filters.js' %}" defer></script>
+{% endblock %}
+
+<body>
+    {% block content %}
+    <section class="title-filters"  style="padding-top: 7vh;">
+        <div class="title"><p>Consolas Playstation</p></div>
+        <section class="filters">
+            <div class="filter-group">
+                <select id="sort">
+                    <option value="relevance">Relevância</option>
+                    <option value="price-asc">Preço: menor para maior</option>
+                    <option value="price-desc">Preço: maior para menor</option>
+                </select>
+            </div>
+
+            <div class="filter-group" style="display: none;">
+                <select id="brand">
+                    <option value="all">Marca</option>
+                    <option value="nintendo">Nintendo</option>
+                    <option value="sony">Sony</option>
+                    <option value="xbox">Xbox</option>
+                </select>
+            </div>
+
+            <div class="filter-group" style="display: none;">
+                <select id="category">
+                    <option value="all">Categoria</option>
+                    <option value="consolas">Consolas</option>
+                </select>
+            </div>
+        </section>
+    </section>
+
+    <section class="section-produts">
+        <div class="consolas-sony">
+            <div class="section-container">
+                {% for product in products %}
+                    <div class="containers produto-{{ product.brand.slug }} categoria-{{ product.category.slug }}">
+                        <div>
+                            <a href="{% url 'product_detail' product.slug %}"><img src="{{product.imageURL}}" alt="{{ product.name }}" class="img"></a>
+                        </div>
+                        <a href="{% url 'product_detail' product.slug %}" class="sub-title">{{ product.name }}</a>
+                        <p class="description">{{ product.description }}</p>
+                        <p class="price">Desde {{ product.price|floatformat:0 }} €</p>
+                        <div class="button">
+                            <a href="{% url 'product_detail' product.slug %}" class="btn-2 update-cart" href="{% url 'cart' %}" title="Saiba Mais">Saiba Mais</a>
+                            <a data-product="{{ product.id }}" data-action="add" class="btn btn-1 update-cart" href="{% url 'cart' %}" title="Compre">Compre</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+</body>
+</html>

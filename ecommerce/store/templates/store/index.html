@@ -1,0 +1,123 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block title %}EletroPoint - Página inicial{% endblock %}
+
+{% block extra_js_head %}
+    <script src="{% static 'js/carousel.js' %}" defer></script>
+{% endblock %}
+
+<body>
+    {% block content %}
+    <section class="carousel">
+        <div class="carousel-list">
+            <div class="item1 item active">
+                <div class="carousel-img">
+                    <img src="{% static 'img/carousel-iphone-17-pro.jpg' %}" alt="Iphone 17 Pro">
+                </div>
+                <div class="carousel-content">
+                    <div class="button">
+                        <a href="{% url 'iphone17Pro' %}" class="btn" title="Saiba mais">Saiba mais</a>
+                    </div>
+                    <p class="price">Desde 1349 €</p>
+                </div>
+            </div>
+            <div class="item2 item">
+                <div class="carousel-img">
+                    <img src="{% static 'img/carousel-playstation.png' %}" alt="PS5 Pro">
+                </div>
+                <div class="carousel-content">
+                    <div class="button">
+                        <a href="{% url 'playstation5pro' %}" class="btn" title="Saiba mais">Saiba mais</a>
+                    </div>
+                    <p class="price">Desde 799 €</p>
+                </div>
+            </div>
+            <div class="item3 item">
+                <div class="carousel-img">
+                    <img src="{% static 'img/carousel-tab-s10.jpg' %}" alt="Galaxy Tab S10">
+                </div>
+                <div class="carousel-content">
+                    <div class="button">
+                        <a href="{% url 'tabS10Plus' %}" class="btn" title="Saiba mais">Saiba mais</a>
+                    </div>
+                    <p class="price">Desde 470 €</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="arrows">
+            <button class="arrow-btn" id="prev-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                </svg>
+            </button>
+            <button class="arrow-btn" id="next-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </button>
+        </div>
+        <div class="indicators">
+            <div class="dots">
+                <div class="dot dot1 active"></div>
+                <div class="dot dot2"></div>
+                <div class="dot dot3"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards">  
+        <div class="cards-container">
+            <div class="card-containers1">
+                <div class="cards-title"><p>Smartphones</p></div>
+                   <a href="{% url 'smartphones' %}"><img class="img-cards" src="{% static 'img/iphone-17-pro-branco-sem-fundo.png' %}" alt="Smartphones"></a>
+                <div class="button">
+                    <a class="btn" href="{% url 'smartphones' %}" title="Saiba mais">Saiba mais</a>
+                </div>
+            </div>
+
+            <div class="card-containers2">
+                <div class="cards-title"><p>Computadores</p></div>
+                <a href="{% url 'computadores' %}"><img class="img-cards" src="{% static 'img/ryzen7-8700f-sem-fundo.png' %}" alt="Computadores"></a>
+                <div class="button">
+                    <a class="btn" href="{% url 'computadores' %}" title="Saiba mais">Saiba mais</a>
+                </div>
+            </div>
+
+            <div class="card-containers3">
+                <div class="cards-title"><p>Portáteis</p></div>
+                <a href="{% url 'portateis' %}"><img id="img-portateis" class="img-cards" src="{% static 'img/macbook-air-sem-fundo.png' %}" alt="Portáteis"></a>
+                <div class="button">
+                    <a class="btn" href="{% url 'portateis' %}" title="Saiba mais">Saiba mais</a>
+                </div>
+            </div>
+
+            <div class="card-containers4">
+                <div class="cards-title"><p>Tablets</p></div>
+                <a href="{% url 'tablets' %}"><img id="img-tablets" class="img-cards" src="{% static 'img/ipad-pro-sem-fundo.png' %}" alt="Tablets"></a>
+                <div class="button">
+                    <a class="btn" href="{% url 'tablets' %}" title="Saiba mais">Saiba mais</a>
+                </div>
+            </div>
+
+            <div class="card-containers5">
+                <div class="cards-title"><p>Consolas</p></div>
+                <a href="{% url 'consolas' %}"><img id="img-consolas" class="img-cards" src="{% static 'img/playstation-5-pro-sem-fundo.png' %}" alt="Consolas"></a>
+                <div class="button">
+                    <a class="btn" href="{% url 'consolas' %}" title="Saiba mais">Saiba mais</a>
+                </div>
+            </div>
+
+             <div class="card-containers6">
+                <div class="cards-title"><p>Todos</p></div>
+                <a href="{% url 'todos' %}"><img id="img-todos" class="img-cards" src="{% static 'img/todos.png' %}" alt="Todos"></a>
+                <div class="button">
+                    <a class="btn" href="{% url 'todos' %}" title="Saiba mais">Saiba mais</a>
+                </div>
+            </div>
+        </div> 
+    </section>
+    {% endblock %}
+</body>
+</html>

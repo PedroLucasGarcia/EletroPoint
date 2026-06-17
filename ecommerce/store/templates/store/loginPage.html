@@ -1,0 +1,35 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block title %}EletroPoint - Entrar{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/login-register-page.css' %}">
+{% endblock %}
+
+<body>
+    {% block content %}
+    <section class="loginPage">
+        <div class="container">
+            <form method="POST" class="form">
+                {% csrf_token %}
+                <h1>Conectar</h1>
+
+                {% if error %}
+                    <p style="color: red;">{{ error }}</p>
+                {% endif %}
+
+                <input type="email" name="email" placeholder="Email" class="input required">
+                <input type="password" name="password" placeholder="Senha" class="input required">
+
+                <a class="forgot-password" href="{% url 'resetPassword' %}">Esqueci minha senha</a>
+
+                <button type="submit" class="btn form-btn">Iniciar Sessão</button>
+
+                <span class="sign-up">Ainda não tem conta? <a href="{% url 'registerPage' %}">Cadastre-se</a>.</span>
+            </form>
+        </div>
+    </section>
+    {% endblock %}
+</body>
+</html>
