@@ -4,7 +4,7 @@ env/
 *.venv
 
 # Python
-__pycache__/
+**/__pycache__/
 *.py[cod]
 *$py.class
 *.so
@@ -19,17 +19,19 @@ staticfiles/
 # Variáveis de ambiente (NUNCA enviar para o GitHub)
 .env
 
-# Ficheiros de dados / exportações
+# Ficheiros de dados / exportações / dashboards
 *.xlsx
 *.csv
 *.pbix
+date_table.py
+add_datetable.py
+export_db.py
+export_dashboard.py
+export_dashboard_single.py
+export_dashboard_excel.py
 
 # Editor / SO
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
-
-# Migrações (opcional - remove esta linha se quiseres versionar as migrações)
-# */migrations/*.py
-# !*/migrations/__init__.py
