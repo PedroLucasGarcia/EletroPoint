@@ -4,7 +4,9 @@
 set -o errexit
 
 pip install -r requirements.txt
+
 python manage.py collectstatic --no-input
+
 python manage.py migrate
 
 # Cria o superuser automaticamente se ainda não existir
@@ -19,4 +21,15 @@ if username and not User.objects.filter(username=username).exists():
     print('Superuser criado.')
 else:
     print('Superuser já existe ou variáveis não definidas.')
+"
+
+# Popula Categories, Brands e Products automaticamente, só se a BD estiver vazia
+python manage.py shell -c "
+from store.models import Product
+if Product.objects.count() == 0:
+    from django.core.management import call_command
+    call_command('loaddata', 'seed_data.json')
+    print('Dados de seed (categorias, marcas, produtos) carregados.')
+else:
+    print('Produtos já existem na base de dados, seed ignorado.')
 "
