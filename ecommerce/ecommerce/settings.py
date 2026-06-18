@@ -5,6 +5,7 @@ Django settings for ecommerce project.
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -69,14 +70,13 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
 
 # Database
-# Usa SQLite localmente; em produção no Render, considera mudar para Postgres
-# (ver guia de deploy para detalhes)
+# Usa Postgres
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL'),
+        conn_max_age=600
+    )
 }
 
 
