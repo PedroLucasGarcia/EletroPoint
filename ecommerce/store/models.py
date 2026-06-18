@@ -34,7 +34,7 @@ class Product(models.Model):
     description = models.TextField(null=True, blank=True)
     link_product = models.CharField(max_length=200, null=True, blank=True)
     slug = models.SlugField(unique=True, null=True, blank=True) 
-    image = models.ImageField(height_field=None, width_field=None, max_length=150, validators=[FileExtensionValidator(['jpg', 'jpeg', 'png', 'webp'])], null=True, blank=True)
+    image = models.ImageField(upload_to='products/',max_length=150,validators=[FileExtensionValidator(['jpg', 'jpeg', 'png', 'webp'])],null=True,blank=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:
