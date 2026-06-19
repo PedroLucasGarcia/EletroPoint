@@ -130,7 +130,7 @@
     "description": "Design inovador, para o melhor desempenho e maior autonomia.",
     "link_product": "smartphones/iphone17Pro.html",
     "slug": "iPhone-17-Pro",
-    "image": "static/img/iphone-17-pro-branco-sem-fundo.png"
+    "image": "iphone-17-pro-branco-sem-fundo.png"
   }
 },
 {
@@ -144,7 +144,7 @@
     "description": "256 GB",
     "link_product": "consolas/switch2.html",
     "slug": "Switch-2",
-    "image": "static/img/swich-2.webp"
+    "image": "swich-2.webp"
   }
 },
 {
@@ -158,7 +158,7 @@
     "description": "13.6\" - Apple M4 10-Core - 16GB RAM - 512GB SSD",
     "link_product": "portateis/macbook-air.html",
     "slug": "Macbook-Air",
-    "image": "static/img/macbook-air-sem-fundo.png"
+    "image": "macbook-air-sem-fundo.png"
   }
 },
 {
@@ -172,7 +172,7 @@
     "description": "O Galaxy mais premium, com câmara e desempenho de Ultra.",
     "link_product": "smartphones/s25-ultra.html",
     "slug": "Galaxy-S25-Ultra",
-    "image": "static/img/s25-ultra-azul.jpg"
+    "image": "s25-ultra-azul.jpg"
   }
 },
 {
@@ -186,7 +186,7 @@
     "description": "Ainda mais resistente. Ainda mais irresistível.",
     "link_product": "smartphones/iphone17.html",
     "slug": "iPhone-17",
-    "image": "static/img/iphone-17-azul.jpg"
+    "image": "iphone-17-azul.jpg"
   }
 },
 {
@@ -200,7 +200,7 @@
     "description": "2TB",
     "link_product": "consolas/playstation5pro.html",
     "slug": "Playstation-5-Pro",
-    "image": "static/img/playstation-5-pro.jpg"
+    "image": "playstation-5-pro.jpg"
   }
 },
 {
@@ -214,7 +214,7 @@
     "description": "12.4\" - Mediatek Dimensity 9300 - 12GB RAM - 256GB SSD",
     "link_product": "tablets/tab-s10-plus.html",
     "slug": "Tab-S10-Plus",
-    "image": "static/img/tab-s10-plus.webp"
+    "image": "tab-s10-plus.webp"
   }
 },
 {
@@ -228,7 +228,7 @@
     "description": "O máximo em câmera, desempenho e elegância.",
     "link_product": "smartphones/xiaomi15-ultra.html",
     "slug": "Xiaomi-15-Ultra",
-    "image": "static/img/xioami-15-ultra-prateado.webp"
+    "image": "xioami-15-ultra-prateado.webp"
   }
 },
 {
@@ -242,7 +242,7 @@
     "description": "13\" - Apple M5 - 12GB RAM - 256GB SSD",
     "link_product": "tablets/ipad-pro.html",
     "slug": "iPad-Pro",
-    "image": "static/img/ipad-pro.webp"
+    "image": "ipad-pro.webp"
   }
 },
 {
@@ -256,7 +256,7 @@
     "description": "O novo padrão para telemóveis profissionais.",
     "link_product": "smartphones/pixel10-pro-xl.html",
     "slug": "Google-Pixel-10-Pro-XL",
-    "image": "static/img/pixel-10-pro-xl-moonstone.webp"
+    "image": "pixel-10-pro-xl-moonstone.webp"
   }
 },
 {
@@ -270,7 +270,7 @@
     "description": "AMD Ryzen 7 8700f - RTX 5070 - 64GB RAM - 2TB SSD",
     "link_product": "computadores/ryzen7-8700f.html",
     "slug": "PC-Gaming-Ryzen-7-8700F",
-    "image": "static/img/ryzen7-8700f.jpg"
+    "image": "ryzen7-8700f.jpg"
   }
 },
 {
@@ -284,7 +284,7 @@
     "description": "O iPhone mais fino de sempre. Com a força de um pro.",
     "link_product": "smartphones/iphone-air.html",
     "slug": "iPhone-Air",
-    "image": "static/img/iphone-air-azul.jpg"
+    "image": "iphone-air-azul.jpg"
   }
 },
 {
@@ -298,7 +298,7 @@
     "description": "1TB",
     "link_product": "consolas/xbox-x.html",
     "slug": "Xbox-Series-X",
-    "image": "static/img/xbox-series-x.webp"
+    "image": "xbox-series-x.webp"
   }
 },
 {
@@ -312,7 +312,7 @@
     "description": "Intel Core Ultra 7 - 16GB RAM - 512GB SSD",
     "link_product": "portateis/book5Pro-360.html",
     "slug": "Book-5-Pro-360",
-    "image": "static/img/book-5-360.jpg"
+    "image": "book-5-360.jpg"
   }
 },
 {
@@ -326,7 +326,7 @@
     "description": "Produtividade e multitarefas sem limites. Tela sem igual.",
     "link_product": "smartphones/z-fold-7.html",
     "slug": "Z-Fold-7",
-    "image": "static/img/z-fold-7-azul.jpg"
+    "image": "z-fold-7-azul.jpg"
   }
 },
 {
@@ -340,7 +340,7 @@
     "description": "825GB",
     "link_product": "consolas/playstation5.html",
     "slug": "Playstation-5",
-    "image": "static/img/playstation-5.webp"
+    "image": "playstation-5.webp"
   }
 },
 {
@@ -354,7 +354,7 @@
     "description": "Intel Core i5 14400f - RTX 5060 Ti - 32GB RAM - 2TB SSD",
     "link_product": "computadores/core-i5-14400f.html",
     "slug": "PC-Gaming-Intel-Core-I5-144400F",
-    "image": "static/img/i5-14400f.jpg"
+    "image": "i5-14400f.jpg"
   }
 },
 {
@@ -368,7 +368,7 @@
     "description": "14\" - Apple M5 10-Core - 16GB RAM - 512GB SSD",
     "link_product": "portateis/macbook-pro.html",
     "slug": "Macbook-Pro",
-    "image": "static/img/macbook-pro.webp"
+    "image": "macbook-pro.webp"
   }
 },
 {
@@ -382,7 +382,7 @@
     "description": "Compacto no bolso e gigante em inovação. Tecnologia dobrável.",
     "link_product": "smartphones/z-flip-7.html",
     "slug": "Z-Flip-7",
-    "image": "static/img/z-flip-7-coral.webp"
+    "image": "z-flip-7-coral.webp"
   }
 },
 {
@@ -396,7 +396,7 @@
     "description": "AMD Ryzen 7 7735HS - 16GB RAM - 512GB SSD",
     "link_product": "portateis/ideapad-slim5.html",
     "slug": "Ideapad-Slim-5",
-    "image": "static/img/ideapad-slim5.webp"
+    "image": "ideapad-slim5.webp"
   }
 },
 {
@@ -410,7 +410,7 @@
     "description": "Equilíbrio perfeito entre potência e elegância.",
     "link_product": "smartphones/s25.html",
     "slug": "Galaxy-S25",
-    "image": "static/img/s25-menta.webp"
+    "image": "s25-menta.webp"
   }
 },
 {
@@ -424,7 +424,7 @@
     "description": "1TB",
     "link_product": "consolas/xbox-s.html",
     "slug": "Xbox-Series-S",
-    "image": "static/img/xbox-series-s.webp"
+    "image": "xbox-series-s.webp"
   }
 },
 {
@@ -438,7 +438,7 @@
     "description": "Performance avançada, para quem exige mais.",
     "link_product": "smartphones/xiaomi15t-pro.html",
     "slug": "Xiaomi-15T-Pro",
-    "image": "static/img/xiaomi-15-t-pro-preto.jpg"
+    "image": "xiaomi-15-t-pro-preto.jpg"
   }
 },
 {
@@ -452,7 +452,7 @@
     "description": "Intel Core i5-1335U - 16GB RAM - 512GB SSD",
     "link_product": "portateis/book4.html",
     "slug": "Galaxy-Book-4",
-    "image": "static/img/book-4.webp"
+    "image": "book-4.webp"
   }
 },
 {
@@ -466,7 +466,7 @@
     "description": "AMD Ryzen 9 5900x - RTX 5060 Ti - 32GB RAM - 1TB SSD",
     "link_product": "computadores/ryzen9-5900x.html",
     "slug": "PC-Gaming-Ryzen-9-5900X",
-    "image": "static/img/ryzen9-5900x.jpg"
+    "image": "ryzen9-5900x.jpg"
   }
 },
 {
@@ -480,7 +480,7 @@
     "description": "Fino, elegante e com um desempenho poderoso.",
     "link_product": "smartphones/s25-edge.html",
     "slug": "Galaxy-S25-Edge",
-    "image": "static/img/s25-edge-preto.webp"
+    "image": "s25-edge-preto.webp"
   }
 },
 {
@@ -494,7 +494,7 @@
     "description": "11\" - Apple M3 - 8GB RAM - 128GB SSD",
     "link_product": "tablets/ipad-air.html",
     "slug": "iPad-Air",
-    "image": "static/img/ipad-air.webp"
+    "image": "ipad-air.webp"
   }
 },
 {
@@ -508,7 +508,7 @@
     "description": "64GB",
     "link_product": "consolas/switch.html",
     "slug": "Switch-OLED",
-    "image": "static/img/swich.webp"
+    "image": "swich.webp"
   }
 },
 {
@@ -522,7 +522,7 @@
     "description": "Precisão, desempenho e fotografia impecável.",
     "link_product": "smartphones/pixel10-pro.html",
     "slug": "Google-Pixel-10-Pro",
-    "image": "static/img/pixel-10-pro-porcelain.webp"
+    "image": "pixel-10-pro-porcelain.webp"
   }
 },
 {
@@ -536,7 +536,7 @@
     "description": "Intel Core i5-1360P - 16GB RAM - 512GB SSD",
     "link_product": "portateis/book3Pro.html",
     "slug": "Galaxy-Book-3Pro",
-    "image": "static/img/book-3-Pro.webp"
+    "image": "book-3-Pro.webp"
   }
 },
 {
@@ -550,7 +550,7 @@
     "description": "Tudo o que adora. Até mesmo o preço.",
     "link_product": "smartphones/iphone16e.html",
     "slug": "iPhone-16E",
-    "image": "static/img/iphone-16e-branco.jpg"
+    "image": "iphone-16e-branco.jpg"
   }
 },
 {
@@ -564,7 +564,7 @@
     "description": "10.9\" - Exynos 1580 4nm OctaCore - 8GB RAM - 128GB SSD",
     "link_product": "tablets/tab-s10-fe.html",
     "slug": "Galaxy-Tab-S10-FE",
-    "image": "static/img/tab-s10-fe.webp"
+    "image": "tab-s10-fe.webp"
   }
 },
 {
@@ -578,7 +578,7 @@
     "description": "Desempenho incrível. Design resistente.",
     "link_product": "smartphones/iphone16.html",
     "slug": "iPhone-16",
-    "image": "static/img/iphone-16-preto.jpg"
+    "image": "iphone-16-preto.jpg"
   }
 },
 {
@@ -592,7 +592,7 @@
     "description": "AMD Ryzen 7 5800X - RTX 5060 - 32GB RAM - 1TB SSD",
     "link_product": "computadores/ryzen7-5800x.html",
     "slug": "PC-Gaming-Ryzen-7-5800X",
-    "image": "static/img/ryzen7-5800x.jpg"
+    "image": "ryzen7-5800x.jpg"
   }
 },
 {
@@ -606,7 +606,7 @@
     "description": "11\" - Apple A16 - 8GB RAM - 128GB SSD",
     "link_product": "tablets/ipad.html",
     "slug": "iPad",
-    "image": "static/img/ipad.webp"
+    "image": "ipad.webp"
   }
 },
 {
@@ -620,7 +620,7 @@
     "description": "Simples, inteligente e poderoso. A experiência pura do Android.",
     "link_product": "smartphones/pixel10.html",
     "slug": "Google-Pixel-10",
-    "image": "static/img/pixel-10-frost.webp"
+    "image": "pixel-10-frost.webp"
   }
 },
 {
@@ -634,7 +634,7 @@
     "description": "Potência equilibrada. Experiência premium.",
     "link_product": "smartphones/xiaomi15.html",
     "slug": "Xiaomi-15",
-    "image": "static/img/xioami-15-branco.webp"
+    "image": "xioami-15-branco.webp"
   }
 },
 {
@@ -648,7 +648,7 @@
     "description": "11\" - MediaTek Helio G100-Ultra - 4GB RAM - 128GB SSD",
     "link_product": "tablets/redmi-pad2.html",
     "slug": "Redmi-Pad-2",
-    "image": "static/img/redmi-pad-2.jpg"
+    "image": "redmi-pad-2.jpg"
   }
 },
 {
@@ -662,7 +662,7 @@
     "description": "Potência pensada para o seu dia a dia.",
     "link_product": "smartphones/redmi-note15-pro-plus.html",
     "slug": "Redmi-Note-15-Pro-Plus",
-    "image": "static/img/redmi-note-15-pro-plus-preto.webp"
+    "image": "redmi-note-15-pro-plus-preto.webp"
   }
 },
 {
@@ -676,7 +676,7 @@
     "description": "Intel Core i5 12400F - RTX 4060 - 16GB RAM - 1TB SSD",
     "link_product": "computadores/core-i5-12400f.html",
     "slug": "PC-Gaming-Intel-Core-I5-12400F",
-    "image": "static/img/i5-12400f.jpg"
+    "image": "i5-12400f.jpg"
   }
 },
 {
@@ -690,7 +690,7 @@
     "description": "Tecnologia e Fluidez que acompanha o seu ritmo.",
     "link_product": "smartphones/xiaomi15t.html",
     "slug": "Xiaomi-15T",
-    "image": "static/img/xioami-15-t-cinza.webp"
+    "image": "xioami-15-t-cinza.webp"
   }
 }
 ]
