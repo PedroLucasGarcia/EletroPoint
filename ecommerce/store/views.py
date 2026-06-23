@@ -658,11 +658,13 @@ def api_dashboard(request):
     """Endpoint que devolve todos os dados para o Power BI."""
 
     orders = []
-    for o in Order.objects.select_related('customer').filter(complete=True):
+    for o in Order.objects.select_related('customer'):
         orders.append({
             'id': o.id,
+            'customer_id': o.customer.id if o.customer else '',
             'customer': o.customer.name if o.customer else '',
             'email': o.customer.email if o.customer else '',
+            'complete': o.complete,
             'date_ordered': o.date_ordered.strftime('%Y-%m-%d %H:%M') if o.date_ordered else '',
             'total': float(o.get_cart_total),
             'items_count': o.get_cart_items,
@@ -677,6 +679,7 @@ def api_dashboard(request):
         orderitems.append({
             'id': item.id,
             'order_id': item.order.id if item.order else '',
+            'product_id': item.product.id if item.product else '',
             'product': item.product.name if item.product else '',
             'category': item.product.category.name if item.product and item.product.category else '',
             'brand': item.product.brand.name if item.product and item.product.brand else '',
@@ -707,6 +710,7 @@ def api_dashboard(request):
             'id': c.id,
             'name': c.name,
             'email': c.email,
+            'user_id': c.user.id if c.user else '',
         })
 
     shipping = []
@@ -714,6 +718,7 @@ def api_dashboard(request):
         shipping.append({
             'id': s.id,
             'order_id': s.order.id if s.order else '',
+            'customer_id': s.customer.id if s.customer else '',
             'customer': s.customer.name if s.customer else '',
             'address': s.address,
             'city': s.city,
