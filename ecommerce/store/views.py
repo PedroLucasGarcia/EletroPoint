@@ -652,3 +652,80 @@ def xboxX(request):
 def xboxS(request):
     cartItems = get_cart_data(request)
     return render(request, 'store/consolas/xbox-s.html', {'cartItems': cartItems})
+
+# -------------------- API --------------------#
+def api_dashboard(request):
+    """Endpoint que devolve todos os dados para o Power BI."""
+
+    orders = []
+    for o in Order.objects.select_related('customer').filter(complete=True):
+        orders.append({
+            'id': o.id,
+            'customer': o.customer.name if o.customer else '',
+            'email': o.customer.email if o.customer else '',
+            'date_ordered': o.date_ordered.strftime('%Y-%m-%d %H:%M') if o.date_ordered else '',
+            'total': float(o.get_cart_total),
+            'items_count': o.get_cart_items,
+            'transaction_id': o.transaction_id,
+        })
+
+    orderitems = []
+    for item in OrderItem.objects.select_related(
+        'product', 'order', 'order__customer',
+        'product__category', 'product__brand'
+    ):
+        orderitems.append({
+            'id': item.id,
+            'order_id': item.order.id if item.order else '',
+            'product': item.product.name if item.product else '',
+            'category': item.product.category.name if item.product and item.product.category else '',
+            'brand': item.product.brand.name if item.product and item.product.brand else '',
+            'color': item.color,
+            'storage': item.storage,
+            'quantity': item.quantity,
+            'unit_price': float(item.custom_price) if item.custom_price else float(item.product.price) if item.product else 0,
+            'total': float(item.get_total),
+            'date_added': item.date_added.strftime('%Y-%m-%d %H:%M') if item.date_added else '',
+            'complete': item.order.complete if item.order else False,
+            'customer': item.order.customer.name if item.order and item.order.customer else '',
+        })
+
+    products = []
+    for p in Product.objects.select_related('category', 'brand'):
+        products.append({
+            'id': p.id,
+            'name': p.name,
+            'category': p.category.name if p.category else '',
+            'brand': p.brand.name if p.brand else '',
+            'price': float(p.price),
+            'slug': p.slug,
+        })
+
+    customers = []
+    for c in Customer.objects.all():
+        customers.append({
+            'id': c.id,
+            'name': c.name,
+            'email': c.email,
+        })
+
+    shipping = []
+    for s in ShippingAddress.objects.select_related('customer', 'order'):
+        shipping.append({
+            'id': s.id,
+            'order_id': s.order.id if s.order else '',
+            'customer': s.customer.name if s.customer else '',
+            'address': s.address,
+            'city': s.city,
+            'country': s.country,
+            'zipcode': s.zipcode,
+            'date_added': s.date_added.strftime('%Y-%m-%d %H:%M') if s.date_added else '',
+        })
+
+    return JsonResponse({
+        'orders': orders,
+        'orderitems': orderitems,
+        'products': products,
+        'customers': customers,
+        'shipping': shipping,
+    })
