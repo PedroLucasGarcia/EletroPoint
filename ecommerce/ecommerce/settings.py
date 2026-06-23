@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -53,23 +52,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
-# ── BASE DE DADOS ────────────────────────────────────────
-DATABASE_URL = os.environ.get('DATABASE_URL')
-
-if DATABASE_URL:
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=DATABASE_URL,
-            conn_max_age=600
-        )
+# ── BASE DE DADOS ─────────────────────────────────────────
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
@@ -83,7 +72,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# ── FICHEIROS ESTÁTICOS ──────────────────────────────────
+# ── FICHEIROS ESTÁTICOS ───────────────────────────────────
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
@@ -92,11 +81,11 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# ── FICHEIROS DE MEDIA (imagens dos produtos) ────────────
+# ── FICHEIROS DE MEDIA (imagens dos produtos) ─────────────
 MEDIA_URL = '/img/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
 
-# ── STORAGES ─────────────────────────────────────────────
+# ── STORAGES ──────────────────────────────────────────────
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
