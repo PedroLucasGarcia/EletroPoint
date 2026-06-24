@@ -699,6 +699,7 @@ def api_dashboard(request):
         products.append({
             'id': p.id,
             'name': p.name,
+            'description': p.description,
             'category': p.category.name if p.category else '',
             'brand': p.brand.name if p.brand else '',
             'price': float(p.price),
