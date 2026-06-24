@@ -680,6 +680,7 @@ def api_dashboard(request):
             'id': item.id,
             'order_id': item.order.id if item.order else '',
             'product_id': item.product.id if item.product else '',
+            'product_image': (request.build_absolute_uri(item.product.image.url) if item.product and item.product.image else ''),
             'product': item.product.name if item.product else '',
             'category': item.product.category.name if item.product and item.product.category else '',
             'brand': item.product.brand.name if item.product and item.product.brand else '',
@@ -702,6 +703,7 @@ def api_dashboard(request):
             'brand': p.brand.name if p.brand else '',
             'price': float(p.price),
             'slug': p.slug,
+            'image_url': request.build_absolute_uri(p.imageURL) if p.imageURL else '',
         })
 
     customers = []
