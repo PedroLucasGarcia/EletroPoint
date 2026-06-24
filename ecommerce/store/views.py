@@ -665,7 +665,7 @@ def api_dashboard(request):
             'customer': o.customer.name if o.customer else '',
             'email': o.customer.email if o.customer else '',
             'complete': o.complete,
-            'date_ordered': o.date_ordered.strftime('%Y-%m-%d %H:%M') if o.date_ordered else '',
+            'date_ordered': o.date_ordered.strftime('%Y-%m-%d') if o.date_ordered else None,
             'total': float(o.get_cart_total),
             'items_count': o.get_cart_items,
             'transaction_id': o.transaction_id,
@@ -688,7 +688,7 @@ def api_dashboard(request):
             'quantity': item.quantity,
             'unit_price': float(item.custom_price) if item.custom_price else float(item.product.price) if item.product else 0,
             'total': float(item.get_total),
-            'date_added': item.date_added.strftime('%Y-%m-%d %H:%M') if item.date_added else '',
+            'date_added': item.date_added.strftime('%Y-%m-%d') if item.date_added else None,
             'complete': item.order.complete if item.order else False,
             'customer': item.order.customer.name if item.order and item.order.customer else '',
         })
@@ -724,7 +724,7 @@ def api_dashboard(request):
             'city': s.city,
             'country': s.country,
             'zipcode': s.zipcode,
-            'date_added': s.date_added.strftime('%Y-%m-%d %H:%M') if s.date_added else '',
+            'date_added': s.date_added.strftime('%Y-%m-%d') if s.date_added else None,
         })
 
     return JsonResponse({
